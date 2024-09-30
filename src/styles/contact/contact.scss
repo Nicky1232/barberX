@@ -1,0 +1,243 @@
+@import "../responsive.scss";
+
+$black-color: #000000;
+$white-color: #ffffff;
+$title-color: #ffffff4d;
+// title font size
+$title-fs: 128px;
+$title-tablet-fs: 110px;
+$title-mobile-fs: 90px;
+// subtitle font size
+$subtitle-fs: 48px;
+$subtitle-tablet-fs: 44px;
+$subtitle-mobile-fs: 40px;
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../../fonts/Segoe\ UI\ Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Fade oclock Contact us page
+//============================== Contact page Hero section =====================================//
+.contact-hero {
+  background: url("../../assets/contact/contact-hero-bg.png") no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 -30px 80px rgba(0, 0, 0, 1);
+}
+
+//============================== Contact page Form section =====================================//
+.contact-form {
+  background: $black-color;
+  padding: 100px 0 40px 0;
+
+  @include mobile {
+    padding-top: 0px;
+  }
+  @include tablet {
+    padding-top: 0px;
+  }
+  @include desktop {
+    padding-top: 80px;
+  }
+
+  .khur-shape {
+    top: -50px;
+
+    @include tablet {
+      bottom: auto;
+      top: 40px;
+    }
+    @include mobile {
+      bottom: auto;
+      top: 0;
+    }
+    img {
+      @include desktop {
+        width: 550px;
+      }
+      @include tablet {
+        width: 500px;
+      }
+      @include mobile {
+        max-width: 200px;
+      }
+    }
+  }
+
+  .contact-form-inner {
+    @include mobile{
+      gap: 20px;
+    }
+    .contact-form-left {
+
+      .contact-form-header {
+        .title {
+          font-family: "Segoe UI";
+          font-size: $title-fs;
+          font-weight: 700;
+          color: $title-color;
+          text-align: end;
+
+          @include mobile {
+            font-size: 48px;
+            text-align: start;
+          }
+          @include tablet {
+            font-size: $title-tablet-fs;
+            text-align: center;
+          }
+        }
+        .subtitle {
+          font-size: $subtitle-fs;
+          color: $white-color;
+          margin-top: -55px;
+          line-height: 20px;
+          text-align: end;
+          margin-right: 18px;
+
+          @include mobile {
+            font-size: 20px;
+            margin-top: -30px;
+            text-align: center;
+            margin-right: -80px;
+          }
+          @include tablet {
+            font-size: $subtitle-tablet-fs;
+            margin-top: -55px;
+            margin-left: 140px;
+            text-align: center;
+            position: absolute;
+          }
+        }
+      }
+      form {
+        margin-top: 200px;
+        padding: 30px 50px 20px 50px;
+        background: $white-color;
+        max-width: 550px;
+
+        @include mobile {
+          margin-top: 30px;
+          max-width: 100%;
+          padding: 10px;
+          height: 233px;
+        }
+        @include tablet {
+          margin-top: 90px;
+        }
+
+        input,
+        textarea {
+          max-width: 498px;
+          width: 100%;
+          background: #d9d9d9;
+          padding: 10px;
+          font-size: 24px;
+          margin: 20px 0;
+          outline: none;
+
+          @include mobile {
+            padding: 3px 10px;
+            margin: 5px 0;
+            font-size: 12px;
+          }
+        }
+        textarea {
+          height: 219px;
+
+          @include mobile {
+            height: 82px;
+          }
+        }
+        .contact-btn{
+          @include mobile{
+            font-size: 10px;
+            border: 1px solid #000000;
+          }
+        }
+      }
+    }
+    .contact-form-right {
+      @include mobile {
+        padding-top: 60px;
+      }
+      @include tablet {
+        max-width: 550px;
+        margin: auto;
+        padding-top: 50px;
+      }
+      h2 {
+        @include mobile {
+          font-size: 24px;
+          color: #ffffff;
+          padding-left: 20px;
+        }
+      }
+      h3 {
+        color: #fcfcfc4d;
+        font-size: $subtitle-fs;
+        padding-left: 20px;
+
+        @include tablet {
+          font-size: $subtitle-mobile-fs;
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+      .flex {
+        .icon {
+          @include mobile {
+            width: 20px;
+          }
+        }
+        h4 {
+          font-size: 36px;
+          color: $white-color;
+          font-weight: 900;
+          padding-left: 20px;
+
+          @include mobile {
+            font-size: 14px;
+            padding-left: 10px;
+          }
+          @include tablet {
+            font-size: 34px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//============================== Contact page Gallery section =====================================//
+.contact-gallery {
+  background-color: $black-color;
+
+  .kuasa-bg {
+    background: url("../../assets/contact/contact-gallery-bg.png") no-repeat;
+    background-position-x: center;
+    background-position-y: -410px;
+    background-size: cover;
+
+    @include mobile {
+      background-position-y: center;
+    }
+    @include tablet {
+      background-position-y: center;
+    }
+
+    .container {
+      gap: 80px;
+
+      @include mobile {
+        gap: 30px;
+      }
+      @include tablet {
+        gap: 50px;
+      }
+    }
+  }
+}

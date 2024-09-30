@@ -1,0 +1,523 @@
+@import "../responsive.scss";
+
+$black-color: #000000;
+$white-color: #ffffff;
+$title-color: #ffffff4d;
+// title font size
+$title-fs: 128px;
+$title-tablet-fs: 110px;
+$title-mobile-fs: 90px;
+// subtitle font size
+$subtitle-fs: 48px;
+$subtitle-tablet-fs: 44px;
+$subtitle-mobile-fs: 40px;
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../../fonts/Segoe\ UI\ Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bernard MT Condensed";
+  src: url("../../fonts/BernardMTCondensed.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+// Fade oclock About page
+//============================== About page Hero section =====================================//
+
+.about-hero {
+  background: url("../../assets/about/about-bg.png") no-repeat;
+  box-shadow: inset 0 -30px 80px rgba(0, 0, 0, 1);
+}
+
+.hero {
+  height: 100%;
+  background-position-y: 4.9vh;
+  background-size: cover;
+  background-position-x: center;
+
+  @include mobile {
+    height: 375px;
+  }
+
+  @include tablet {
+    background-position-y: 3vh;
+  }
+  @include desktop {
+    background-position-y: 3.5vh;
+  }
+
+  .container {
+    .hero-content {
+      .hero-title {
+        padding-top: 50px;
+        max-width: 613px;
+        margin: auto;
+        font-style: normal;
+        font-size: $title-fs;
+        color: $black-color;
+        text-align: center;
+        -webkit-text-stroke: 20px #b4a670;
+        paint-order: stroke;
+
+        // text-shadow: #B4A670 20px 30px 0;
+
+        // @media (max-width: 500px) {
+        //   font-size: 70px !important;
+        //   line-height: 80px !important;
+        //   -webkit-text-stroke: 10px #b4a670 !important	;
+        // }
+
+        @include mobile {
+          font-size: 32px;
+          -webkit-text-stroke: 6px #b4a670;
+          line-height: 100px;
+          left: auto;
+          font-family: "Segoe UI";
+        }
+        @include tablet {
+          font-size: $title-tablet-fs;
+        }
+      }
+    }
+  }
+}
+
+//============================== About page Passion section =====================================//
+.passion-logo {
+  @include mobile {
+    top: -70px;
+  }
+  @include tablet {
+    top: -100px;
+  }
+  img {
+    @include mobile {
+      width: 150px;
+    }
+    @include tablet {
+      width: 200px;
+    }
+  }
+}
+.passion {
+  background: $black-color;
+  padding-top: 100px;
+
+  @include mobile {
+    background: linear-gradient(360deg, #000000 48.5%, #666666 100%);
+    padding-top: 30px;
+  }
+  // @include tablet {
+  //   padding-top: 50px;
+  // }
+
+  .passion-header {
+    padding-bottom: 200px;
+    @include mobile {
+      padding-left: 30px;
+      padding-bottom: 0;
+    }
+    .title {
+      font-family: "Segoe UI";
+      font-size: $title-fs;
+      font-weight: 700;
+      color: #ffffff96;
+
+      // @media (max-width: 500px) {
+      //   font-size: 60px !important;
+      // }
+      @include mobile {
+        font-size: 48px;
+        color: #ffffff4d;
+      }
+      @include tablet {
+        font-size: $title-tablet-fs;
+      }
+    }
+    .subtitle {
+      font-size: $subtitle-fs;
+      color: $white-color;
+      margin-top: -65px;
+      line-height: 20px;
+      margin-left: 100px;
+      position: relative;
+
+      // @media (max-width: 500px) {
+      //   margin-top: -35px !important;
+      //   margin-left: 0;
+      // }
+      @include mobile {
+        font-size: 20px;
+        margin-top: -35px;
+        margin-left: 0;
+        text-align: left;
+        padding-left: 50px;
+      }
+      @include tablet {
+        font-size: $subtitle-tablet-fs;
+        margin-top: -55px;
+        margin-left: 0;
+      }
+    }
+    .subtitle::after {
+      @include mobile {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 1px;
+        background: #ffffff;
+        left: 50px;
+        bottom: -5px;
+      }
+    }
+  }
+
+  .passion-inner {
+    .passion-left {
+      @include mobile {
+        width: 50%;
+      }
+      @include tablet {
+        width: 100%;
+      }
+
+      .passion-text {
+        color: $white-color;
+        padding-top: 100px;
+        font-size: 32px;
+        text-align: justify;
+
+        @include mobile {
+          font-size: 26px;
+          padding-top: 20px;
+          line-height: 35px;
+          font-weight: 700;
+        }
+
+        p {
+          padding-bottom: 50px;
+
+          @include mobile {
+            font-size: 20px;
+            line-height: 24px;
+            padding-bottom: 0;
+          }
+          @include tablet {
+            font-size: 25px;
+          }
+
+          a {
+            border-bottom: 2px solid;
+          }
+        }
+      }
+    }
+    .passion-right {
+      @include mobile {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        width: 50%;
+      }
+      @include tablet {
+        width: 100%;
+        padding-left: 20px;
+      }
+    }
+  }
+  p {
+    @include mobile {
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: justify;
+
+      a {
+        border-bottom: 2px solid;
+      }
+    }
+  }
+  .passion-btn {
+    max-width: 612px;
+    color: $black-color;
+    padding: 50px;
+    background: #d9d9d9;
+    border-radius: 167px;
+    position: relative;
+    margin: 90px auto auto auto;
+    text-align: end;
+
+    @include mobile {
+      margin-left: auto !important;
+      margin-right: 30px;
+      margin-top: 30px;
+      max-width: 200px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    @include tablet {
+      padding: 35px;
+      max-width: 500px;
+    }
+
+    button {
+      font-size: 32px;
+      font-weight: 800;
+
+      @include mobile {
+        font-size: 14px;
+        padding-right: 50px;
+        font-family: '__Pacifico_335c89';
+      }
+    }
+
+    img {
+      position: absolute;
+      top: -50%;
+
+      @include mobile {
+        width: 86px;
+        right: -20px;
+        top: -10px;
+      }
+      @include tablet {
+        width: 120px;
+        top: -30%;
+      }
+    }
+  }
+}
+
+//============================== About page Mission section =====================================//
+.mission::after {
+  @include mobile {
+    content: "";
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    left: 0;
+    top: -350px;
+    background: url("../../assets/about/mobile-mission-bg.png") no-repeat;
+    background-size: cover;
+    background-position-x: left;
+  }
+}
+.mission {
+  background: url("../../assets/Home/reviews-bg.png") no-repeat;
+  background-size: cover;
+  margin-top: -1000px;
+  box-shadow: inset 0 -40px 50px rgba(0, 0, 0, 1);
+
+  @include mobile {
+    margin-top: 0;
+    background: transparent;
+    // background-position-y: -200px;
+    position: relative;
+  }
+
+  .passion-inner {
+    padding-top: 1000px;
+    padding-bottom: 50px;
+    @include mobile {
+      padding-top: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .passion-left {
+      @include mobile {
+        width: 100%;
+        font-weight: 700;
+      }
+
+      .passion-text {
+        @include tablet {
+          padding-top: 0;
+        }
+      }
+      .passion-text p {
+        @include mobile {
+          text-align: center;
+          font-weight: 600;
+          max-width: 385px;
+          margin: auto;
+        }
+      }
+    }
+    .passion-right {
+      @include mobile {
+        width: 80%;
+      }
+    }
+    .passion-header {
+      padding-bottom: 0;
+      @include tablet {
+        padding-bottom: 50px;
+      }
+      .title {
+        @include mobile {
+          padding-left: 50px;
+        }
+      }
+      .subtitle {
+        @include mobile {
+          padding-left: 30px;
+        }
+      }
+      .subtitle::after {
+        @include mobile {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+//============================== About page Review section =====================================//
+.review {
+  background: $black-color;
+  .review-header {
+    .title {
+      font-family: "Segoe UI";
+      font-size: $title-fs;
+      font-weight: 700;
+      color: $title-color;
+
+      // @media (max-width: 500px) {
+      //   font-size: 60px !important;
+      // }
+      @include mobile {
+        font-size: 48px;
+      }
+      @include tablet {
+        font-size: $title-tablet-fs;
+      }
+    }
+    .subtitle {
+      font-size: $subtitle-fs;
+      color: $white-color;
+      margin-top: -75px;
+      line-height: 20px;
+      text-align: center;
+      margin-left: 55px;
+
+      @include mobile {
+        font-size: 20px;
+        margin-top: -35px;
+        text-align: left;
+        position: absolute;
+      }
+      @include tablet {
+        font-size: $subtitle-tablet-fs;
+        margin-top: -55px;
+        margin-left: 0;
+        position: absolute;
+      }
+    }
+    .para {
+      font-size: 36px;
+      color: $white-color;
+      max-width: 475px;
+      line-height: 43px;
+      padding: 50px 0;
+      text-align: justify;
+
+      @include mobile {
+        font-size: 20px;
+        max-width: 292px;
+        margin: 0;
+        text-align: justify;
+        line-height: 28px;
+        font-weight: 700;
+        padding: 0;
+      }
+    }
+  }
+  .review-inner {
+    padding: 50px 0 100px 0;
+    @include mobile {
+      gap: 50px;
+    }
+
+    .review-right {
+      .more-btn {
+        padding: 5px 40px;
+        font-size: 20px;
+        background: #b4a670;
+        font-family: "Bernard MT Condensed";
+      }
+    }
+
+    .card {
+      background: #d9d9d9;
+      padding: 20px;
+      border-radius: 125px;
+      border: 12px solid #b4a670;
+      text-align: center;
+      max-width: 508px;
+
+      @include mobile {
+        max-width: 400px;
+        border: none;
+        border-radius: 54px;
+        padding: 10px 5px;
+        height: 280px;
+      }
+
+      .card-img {
+        @include mobile {
+          width: 60px;
+          margin: auto;
+        }
+      }
+      .star {
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+      .card-body {
+        .card-text {
+          font-size: 32px;
+          line-height: 38px;
+          padding: 20px 0 25px 0;
+
+          @include mobile {
+            font-size: 20px;
+            line-height: 18px;
+            font-weight: 700;
+            padding: 10px 0 10px 0;
+          }
+        }
+        h5 {
+          font-size: 28px;
+          font-weight: 900;
+          line-height: 20px;
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+        h6 {
+          font-size: 28px;
+          font-weight: 400;
+
+          @include mobile {
+            font-size: 12px;
+            font-family: '__Alumni_Sans_d80b96';
+          }
+        }
+      }
+    }
+  }
+}
+
+//============================== About page HairstyleGallery section ===============================//
+.hairstyle-gallery {
+  background: $black-color;
+}

@@ -1,0 +1,87 @@
+@import "./responsive.scss";
+$black-color: #000000;
+
+nav{
+    padding: 20px 0;
+    color: #FFFFFF;
+    background: $black-color;
+
+    @include mobile{
+        padding: 10px 0;
+    }
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+
+        li{
+            a{
+                font-weight: 800;
+                font-size: 24px;
+
+                @include mobile{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .logo-humbarger{
+        display: none;
+    }
+}
+
+// @media (max-width: 768px) {
+//     nav{
+//         padding: 0;
+//         background: none;
+//         height: 10vh;
+        
+//         .navbar-mobile{
+//             display: block;
+//             height: 90vh;
+//             transition: all ease .1s;
+//             background: $black-color;
+//             width: 0;
+//             overflow: hidden;
+
+//             div{
+//                 display: grid;
+//                 justify-content: none;
+//                 text-align: center;
+
+//                li{
+//                 padding: 20px 0;
+//                }
+//             }
+//         }
+
+//         .open-sidebar{
+//             width: 100%;
+//         }
+
+//         .logo-humbarger{
+//             display: flex;
+//             height: 10vh;
+//             background: $black-color;
+//         }
+//     }
+// }
+
+.extra-logo{
+
+    @include mobile{
+        padding-top: 40px;
+    }
+
+    img{
+        @include mobile{
+            width: 114px;
+            height: 114px;
+        }
+        @include tablet{
+            width: 130px;
+            height: 130px;
+        }
+    }
+}

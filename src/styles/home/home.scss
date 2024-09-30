@@ -1,0 +1,967 @@
+@import "../responsive.scss";
+
+$black-color: #000000;
+$white-color: #ffffff;
+$title-color: #ffffff4d;
+// title font size
+$title-fs: 128px;
+$title-tablet-fs: 110px;
+$title-mobile-fs: 90px;
+// subtitle font size
+$subtitle-fs: 48px;
+$subtitle-tablet-fs: 44px;
+$subtitle-mobile-fs: 40px;
+
+@font-face {
+  font-family: "Bernard MT Condensed";
+  src: url("../../fonts/BernardMTCondensed.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../../fonts/Segoe\ UI\ Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Fade O'clock Barbershop */
+
+//============================== Home page Hero section =====================================//
+
+body {
+  overflow-x: hidden;
+}
+
+.home-hero {
+  background: url("../../assets/Home/hero-bg.png") no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position-x: center;
+  box-shadow: inset 0 -50px 50px rgba(0, 0, 0, 1);
+
+  @include tablet {
+    background-position-y: 3vh;
+  }
+  @include desktop {
+    background-position-y: 3.5vh;
+  }
+
+  .container {
+    .hero-content {
+      position: relative;
+
+      @include mobile {
+        position: inherit;
+      }
+
+      .hero-title {
+        position: absolute;
+        max-width: 623px;
+        height: 304px;
+        left: calc(50% - 623px / 2 + 6.5px);
+        top: 207px;
+        font-style: normal;
+        line-height: 152px;
+        font-family: "Bernard MT Condensed";
+        font-weight: 900;
+        font-size: $title-fs;
+        text-align: center;
+        color: $black-color;
+        -webkit-text-stroke: 20px #b4a670;
+        paint-order: stroke;
+        // text-shadow: #B4A670 20px 30px 0;
+
+        @media (max-width: 500px) {
+          font-size: 65px !important;
+          line-height: 80px !important;
+          -webkit-text-stroke: 10px #b4a670 !important;
+        }
+
+        @include mobile {
+          font-size: $title-mobile-fs;
+          -webkit-text-stroke: 15px #b4a670;
+          line-height: 100px;
+          left: auto;
+          display: none;
+        }
+        @include tablet {
+          font-size: $title-tablet-fs;
+        }
+      }
+      .hero-para {
+        position: absolute;
+        max-width: 1067px;
+        min-height: 146px;
+        left: calc(50% - 1067px / 2 + 23.5px);
+        top: 526px;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: center;
+        color: $white-color;
+        border-top: 2px solid $black-color;
+        margin-top: -7px;
+
+        @include mobile {
+          position: relative;
+          left: auto;
+          font-size: 18px;
+          color: #b4a670;
+          top: 250px;
+          border-top: none;
+          line-height: 21.6px;
+          -webkit-text-stroke: 3px #000000;
+          paint-order: stroke;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        @include tablet {
+          left: auto;
+        }
+      }
+    }
+  }
+}
+
+//============================== Home page Welcome section =====================================//
+.home-welcome {
+  background-color: $black-color;
+
+  .welcome-inner {
+    .welcome-left img {
+      @include mobile {
+        width: 166px;
+      }
+    }
+
+    .welcome-right {
+      max-width: 512px;
+
+      @include tablet {
+        max-width: 50%;
+        margin: auto;
+        margin-top: 150px;
+      }
+    }
+  }
+  p {
+    color: $white-color;
+    font-size: 40px;
+    line-height: 48px;
+
+    @include mobile {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+    @include tablet {
+      text-align: start;
+      font-size: 35px;
+    }
+  }
+  p:nth-child(2) {
+    @include mobile {
+      max-width: 372px;
+      margin: auto;
+    }
+  }
+}
+.welcome-right-image {
+  @include mobile {
+    top: auto;
+    bottom: 50px;
+  }
+  @include tablet {
+    top: 00px;
+  }
+
+  img {
+    @include mobile {
+      width: 240px;
+    }
+    @include tablet {
+      width: 450px;
+    }
+  }
+}
+
+//============================== Home page Services section =====================================//
+.services::after {
+  @include mobile {
+    content: "";
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.6;
+    background: url("../../assets/Home/service-bg.png") no-repeat;
+    background-size: cover;
+    background-position-x: left;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+  }
+}
+.services {
+  background: url("../../assets/Home/service-bg.png") no-repeat;
+  background-size: cover;
+  height: 1570px;
+  background-position: center;
+  margin-top: -230px;
+  position: relative;
+  z-index: 2;
+
+  @include mobile {
+    height: auto;
+    background: none;
+  }
+  @include tablet {
+    height: 1000px;
+  }
+
+  .services-header {
+    padding-top: 290px;
+
+    @include mobile {
+      padding-top: 230px;
+    }
+
+    .title {
+      font-family: "Segoe UI";
+      font-size: $title-fs;
+      font-weight: 700;
+      color: $title-color;
+      position: relative;
+      display: inline;
+
+      @include mobile {
+        font-size: 48px;
+        display: flex;
+        padding-left: 40px;
+      }
+      @include tablet {
+        font-size: $title-tablet-fs;
+      }
+    }
+    .title::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 3px;
+      background: $black-color;
+      bottom: 10px;
+      left: -60px;
+
+      @include mobile {
+        width: 150px;
+        content: none;
+      }
+      @include tablet {
+        width: 200px;
+      }
+    }
+    .title::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 3px;
+      background: $black-color;
+      bottom: 10px;
+      right: -50px;
+
+      @include mobile {
+        width: 150px;
+        content: none;
+      }
+      @include tablet {
+        width: 200px;
+      }
+    }
+
+    .subtitle {
+      font-size: $subtitle-fs;
+      color: $white-color;
+      line-height: 20px;
+      margin-top: -90px;
+
+      @include mobile {
+        font-size: 20px;
+        margin-top: -40px;
+        line-height: 35px;
+        position: relative;
+      }
+      @include tablet {
+        font-size: $subtitle-tablet-fs;
+        margin-top: -85px;
+      }
+    }
+    .subtitle::after {
+      @include mobile {
+        content: "";
+        position: absolute;
+        width: 230px;
+        height: 2px;
+        background: #fff;
+        right: 15%;
+        bottom: 0px;
+      }
+    }
+    img {
+      @media (max-width: 516px) {
+        margin-top: -30px !important;
+      }
+    }
+  }
+
+  .services-inner {
+    @include mobile {
+      padding-bottom: 50px;
+    }
+
+    .service-cards {
+      @include mobile {
+        gap: 10px;
+        align-items: normal;
+      }
+      .card {
+        background: #d9d9d9;
+        width: 280px;
+        height: 434px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+
+        @media (max-width: 415px) {
+          max-width: 70px;
+        }
+        @include mobile {
+          width: 88px;
+          height: 156px;
+          padding-top: 10px;
+        }
+
+        @include tablet {
+          width: 150px;
+          height: 300px;
+          padding-top: 20px;
+        }
+
+        .card-img-top {
+          @include mobile {
+            width: 45px;
+            height: 45px;
+          }
+          @include tablet {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        .card-title {
+          font-size: 32px;
+
+          @include mobile {
+            font-size: 12px;
+          }
+          @include tablet {
+            font-size: 18px;
+          }
+        }
+
+        .card-text {
+          font-size: 24px;
+
+          @include mobile {
+            font-size: 11px;
+            line-height: 12px;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+            font-weight: 600;
+          }
+          @include tablet {
+            font-size: 18px;
+            line-height: 16px;
+          }
+        }
+      }
+      .card:nth-child(1),
+      .card:nth-child(3) {
+        @include mobile {
+          margin-top: 70px;
+        }
+      }
+    }
+  }
+}
+
+//============================== Home page Open section =====================================//
+
+.home-open {
+  background: $black-color;
+  .container {
+    margin-top: -350px;
+
+    .open-header {
+      .title {
+        @media (max-width: 415px) {
+          padding-left: 60px !important;
+        }
+      }
+
+      .subtitle::after {
+        content: "";
+      }
+    }
+
+    .open-inner {
+      margin-top: -50px;
+
+      .open-left {
+        @media (max-width: 400px) {
+          padding-right: 60px;
+        }
+      }
+    }
+  }
+}
+
+.open {
+  padding-bottom: 80px;
+  margin-top: -5px;
+
+  @include mobile {
+    padding-bottom: 0;
+    margin-top: -50px;
+  }
+
+  .container {
+    @media (max-width: 1279px) {
+      margin-top: 0;
+      padding-top: 10px;
+    }
+
+    .open-header {
+      .title {
+        font-family: "Segoe UI";
+        font-size: $title-fs;
+        font-weight: 700;
+        color: $title-color;
+        position: relative;
+        display: inline;
+
+        @include mobile {
+          font-size: 48px;
+          display: ruby-text;
+          padding-left: 100px;
+        }
+        @include tablet {
+          font-size: $title-tablet-fs;
+        }
+      }
+      .subtitle {
+        font-size: $subtitle-fs;
+        color: $white-color;
+        margin-top: -145px;
+        line-height: 20px;
+        margin-left: -13px;
+        position: relative;
+        display: table;
+
+        @include mobile {
+          font-size: 20px;
+          line-height: 20px;
+          margin-top: -35px;
+          display: flex;
+          justify-content: center;
+        }
+        @include tablet {
+          font-size: $subtitle-tablet-fs;
+          margin-top: -130px;
+        }
+      }
+      .subtitle::after {
+        position: absolute;
+        width: 251px;
+        height: 3px;
+        background: $white-color;
+        right: -185px;
+        top: -10px;
+
+        @include mobile {
+          width: 200px;
+          top: auto;
+          bottom: -5px;
+          display: flex;
+          justify-content: center;
+          right: auto;
+          height: 1px;
+        }
+      }
+
+      .header-text {
+        font-size: 32px;
+        max-width: 1024px;
+        color: $white-color;
+        margin-top: 6.5rem;
+        line-height: 47px;
+
+        @include mobile {
+          font-size: 20px;
+          text-align: center;
+          line-height: 19px;
+          font-weight: 600;
+          margin-top: 1.5rem;
+          font-family: revert-layer;
+        }
+      }
+    }
+
+    .open-inner {
+      @media (max-width: 1200px) {
+        margin-top: 40px;
+      }
+      @include mobile {
+        position: relative;
+        padding-bottom: 100px;
+      }
+
+      .open-left {
+        max-width: 596px;
+        width: 100%;
+
+        @include mobile {
+          max-width: 253px;
+        }
+        @include tablet {
+          width: 75%;
+        }
+
+        ul {
+          color: $white-color;
+
+          li {
+            font-size: 36px;
+            font-weight: 900;
+            border-bottom-width: 3px;
+            border-style: dashed solid;
+            margin-bottom: 30px;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include mobile {
+              font-weight: 900;
+              font-size: 15px;
+              margin-bottom: 10px;
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+      .open-right {
+        @include mobile {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        img {
+          @include mobile {
+            width: 170px;
+          }
+          @include tablet {
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//============================== Home page Expert section =====================================//
+
+.expert {
+  background: url("../../assets/Home/expert-bg.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+  .expert-bg {
+    background: #0000008f;
+    box-shadow: inset 0 -50px 90px rgba(0, 0, 0, 1),
+      inset 0 40px 50px rgba(0, 0, 0, 1);
+
+    .container {
+      .expert-header {
+        max-width: 820px;
+        margin-left: auto;
+        text-align: end;
+
+        @include mobile {
+          text-align: center;
+          text-align: start;
+          margin: auto;
+        }
+        @include tablet {
+          max-width: 720px;
+          text-align: start;
+          margin: auto;
+        }
+
+        .title {
+          font-family: "Segoe UI";
+          font-size: $title-fs;
+          font-weight: 700;
+          color: $title-color;
+          position: relative;
+          display: inline;
+          padding-right: 70px;
+
+          @include mobile {
+            font-size: 48px;
+            display: flex;
+            justify-content: end;
+            padding-right: 25px;
+          }
+          @include tablet {
+            font-size: $title-tablet-fs;
+            padding-right: 0;
+          }
+        }
+        .subtitle {
+          font-size: $subtitle-fs;
+          color: $white-color;
+          position: relative;
+          margin-top: -90px;
+          max-width: 495px;
+          margin-left: auto;
+          margin-bottom: 80px;
+
+          @include mobile {
+            font-size: 20px;
+            margin-left: 0;
+            display: flex;
+            justify-content: end;
+            padding-right: 80px;
+            margin-top: -40px;
+            margin-bottom: 40px;
+          }
+          @include tablet {
+            font-size: $subtitle-tablet-fs;
+            margin-left: 0;
+          }
+        }
+        .subtitle::after {
+          content: "";
+          position: absolute;
+          width: 87%;
+          height: 3px;
+          background: $white-color;
+          bottom: 5px;
+          right: -10px;
+
+          @include mobile {
+            left: auto;
+            height: 1px;
+            width: 245px;
+            display: flex;
+            justify-content: end;
+            right: 80px;
+            bottom: -0px;
+          }
+        }
+      }
+
+      .expert-inner {
+        @include mobile {
+          padding-bottom: 30px;
+        }
+        p {
+          font-size: 32px;
+          color: $white-color;
+          max-width: 475px;
+          line-height: 38.4px;
+          font-weight: 400;
+          margin-left: auto;
+          text-align: justify;
+
+          @include mobile {
+            max-width: 100%;
+            padding-bottom: 0px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 600;
+          }
+          @include tablet {
+            max-width: 720px;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+//============================== Home page testimonial section =====================================//
+.testimonial {
+  // background: url("../../assets/Home/reviews-bg.png") no-repeat;
+  // background-position-x: center;
+  // background-position-y: -800px;
+  // background-size: cover;
+
+  // @media (min-width: 1280px) and (max-width: 1500px) {
+  //   background-position-y: -400px;
+  // }
+  // @include desktop {
+  //   background-position-y: -100px;
+  // }
+  // @include tablet {
+  //   background-position-y: center;
+  // }
+  // @include mobile {
+  //   background-position-y: center;
+  // }
+
+  .testimonial-header {
+    max-width: 804px;
+    margin: auto;
+
+    .testimonial-text {
+      font-size: 40px;
+      color: $white-color;
+      line-height: 57px;
+      text-align: center;
+      padding-top: 300px;
+      font-weight: 200;
+
+      @include mobile {
+        padding-top: 50px;
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: 800;
+        max-width: 345px;
+        margin: auto;
+        font-family: revert-layer;
+      }
+      @include tablet {
+        padding-top: 100px;
+        font-size: 35px;
+      }
+    }
+  }
+
+  .testimonial-inner {
+    margin-top: 250px;
+
+    @include mobile {
+      margin-top: 50px;
+      padding-bottom: 0.2rem;
+    }
+    @include tablet {
+      margin-top: 100px;
+      padding-bottom: 7rem;
+    }
+
+    .reviews {
+      background: #d9d9d9;
+      padding: 30px;
+      border-radius: 150px;
+
+      @include mobile {
+        border-radius: 167px;
+        padding: 15px;
+      }
+
+      .reviews-image {
+        img {
+          width: 100%;
+
+          @include mobile {
+            width: 150px;
+          }
+          @include tablet {
+            width: 400px;
+          }
+        }
+      }
+
+      .reviews-content {
+        @include mobile {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .reviews-head {
+          font-size: 35px;
+          font-weight: 800;
+          padding-bottom: 40px;
+          -webkit-text-stroke: 1px #000000;
+          paint-order: stroke;
+
+          @include mobile {
+            font-size: 20px;
+            font-weight: 900;
+            padding-bottom: 15px;
+            line-height: 24px;
+            font-family: revert-layer;
+            -webkit-text-stroke: 0.8px #000000;
+            letter-spacing: 0.5px;
+          }
+          @include tablet {
+            line-height: 45px;
+            padding-bottom: 30px;
+          }
+        }
+
+        .reviews-desc {
+          font-size: 25px;
+          line-height: 30px;
+          max-width: 848px;
+          margin: auto;
+
+          @include mobile {
+            font-size: 13px;
+            text-align: justify;
+            line-height: 14px;
+            font-weight: 700;
+            color: #000000;
+          }
+        }
+
+        .reviews-footer {
+          text-align: end;
+          line-height: 30px;
+
+          @include mobile {
+            line-height: 15px;
+            padding-right: 30px;
+            padding-top: 5px;
+          }
+          @include tablet {
+            padding-right: 30px;
+          }
+          @include desktop {
+            padding-right: 30px;
+          }
+
+          .star {
+            @include mobile {
+              font-size: 15px;
+              gap: 3px;
+            }
+          }
+
+          h5 {
+            font-size: 28px;
+            font-weight: 900;
+            -webkit-text-stroke: 2px #000000;
+            paint-order: stroke;
+            letter-spacing: 1px;
+
+            @include mobile {
+              font-size: 15px;
+              -webkit-text-stroke: 0.5px #000000;
+              letter-spacing: normal;
+            }
+          }
+          p {
+            font-size: 28px;
+
+            @include mobile {
+              font-size: 11px;
+              font-weight: 500;
+            }
+          }
+
+          .reviews-footer-right {
+            @include mobile {
+              font-family: "__Alumni_Sans_d80b96";
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//============================== Home page testimonial section =====================================//
+.map-logo {
+  @include mobile {
+    height: 150px;
+  }
+
+  iframe {
+    @include mobile {
+      height: 100%;
+    }
+  }
+
+  .absolute {
+    top: 20%;
+    left: 17%;
+    @include mobile {
+      width: 150px;
+      left: 10%;
+      top: 30%;
+    }
+    @include tablet {
+      width: 200px;
+      left: 13%;
+      top: 25%;
+    }
+  }
+}
+
+// Footer Bottom
+.footer-bottom {
+  background: $black-color;
+  margin-top: -5px;
+
+  p {
+    color: #b4a670;
+    font-family: "Segoe UI";
+    font-size: 25px;
+    padding: 20px 15px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    a {
+      border-bottom: 1px solid #b4a670;
+    }
+  }
+}
+
+.btn-group {
+  font-family: "Segoe UI";
+  font-weight: 500;
+  font-size: 20px;
+  padding: 7px 30px;
+  background: #b4a670;
+}
+
+
+// Online Booking Button
+.online-booking-btn{
+  height: 0;
+  width: 100%;
+  a{
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background-color: #B4A67099;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 50px;
+  }
+}
